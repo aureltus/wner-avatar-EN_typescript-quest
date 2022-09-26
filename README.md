@@ -8,22 +8,24 @@ Tu vas devoir trouver les informations suivantes et les tester au fur et à mesu
 - Quels sont les différents type primitives de données en TypeScript ? 
 - Comment typer un tableau ? 
 - Quel est le type `any` ?
-- Comment typer le retour d'une fonction ainsi que ses paramètres ? 
+- Comment typer le retour d'une fonction ainsi que le type de ses paramètres ? 
 
 ## Level 2
 
 - Qu'est ce qu'une classe ? 
 - Qu'est ce qu'un constructeur de classe ? 
 - Qu'est ce qu'une instance de classe ?
+- Comment vérifier qu'une classe est d'une certaine instance ?
 - Qu'est ce que `this` dans une classe ?
 - Qu'est ce qu'une méthode de classe ? 
 - Qu'est ce que la visibilité des propriétés ? 
 
 ## Level 3
 
-- Qu'est ce qu'une interface ? 
+- Comment faire pour diviser notre programme en différents fichiers ? (ex: une classe dans un fichier que j'importe dans un autre) 
 - Qu'est ce que l'héritage ? 
 - Comment appeler le constructeur d'une classe mère ? 
+- Comment appeler une méthode d'une classe mère ? 
 - Qu'est ce que le polymorphism ? 
 
 
