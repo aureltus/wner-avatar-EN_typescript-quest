@@ -85,7 +85,7 @@ Crée une boucle qui fait que deux instances de sous-classes `Hero` s'affrontent
 
 Quand au moins l'une d'entre elles est morte, afficher `{heroName} wins`. Si les deux sont morts, afficher `It's a draw`.
 
--------------
+---
 
 ***Bonus 1 : Les dégâts de l'arme***
 
