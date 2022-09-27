@@ -10,6 +10,8 @@ Tu vas devoir trouver les informations suivantes et les tester au fur et à mesu
 - Quel est le type `any` ?
 - Comment typer le retour d'une fonction ainsi que le type de ses paramètres ? 
 
+**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+
 ## Level 2
 
 - Qu'est ce qu'une classe ? 
@@ -20,6 +22,8 @@ Tu vas devoir trouver les informations suivantes et les tester au fur et à mesu
 - Qu'est ce qu'une méthode de classe ? 
 - Qu'est ce que la visibilité des propriétés ? 
 
+**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+
 ## Level 3
 
 - Comment faire pour diviser notre programme en différents fichiers ? (ex: une classe dans un fichier que j'importe dans un autre) 
@@ -28,6 +32,7 @@ Tu vas devoir trouver les informations suivantes et les tester au fur et à mesu
 - Comment appeler une méthode d'une classe mère ? 
 - Qu'est ce que le polymorphism ? 
 
+**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
 
 ## Boss level 
 
@@ -87,6 +92,8 @@ Crée une boucle qui fait que deux instances de sous-classes `Hero` s'affrontent
 
 Quand au moins l'une d'entre elles est morte, afficher `{heroName} wins`. Si les deux sont morts, afficher `It's a draw`.
 
+**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+
 ---
 
 ***Bonus 1 : Les dégâts de l'arme***
@@ -98,3 +105,4 @@ Quand au moins l'une d'entre elles est morte, afficher `{heroName} wins`. Si les
 ***Bonus 2 : Interface graphique***
 
 *Réalise une interface graphique pour l'application (par exemple, avec un choix de héros et d'armes, et un visuel sur les dégâts infligés)*
+
