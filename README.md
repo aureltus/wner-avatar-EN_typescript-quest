@@ -56,6 +56,8 @@ La classe `Hero` permet de créer des objets possédant les propriétés suivant
 
 Crée deux instances de `Hero` et vérifie que les méthodes `attack` et `isAlive` fonctionnent.
 
+**Contrainte à ajouter** : il faut maintenant faire en sorte que les propriétés `name`, `power`, `life` soient privées. Tu vas devoir créer des méthodes permettant d'accéder à leur valeur et de modifier leur valeur.
+
 ### Partie 2 : Armes
 ​
 Crée une classe `Weapon` avec la propriété suivante :
