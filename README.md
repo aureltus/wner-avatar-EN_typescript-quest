@@ -1,108 +1,118 @@
+# Briefing
 
-# Consignes
-
-Tu vas devoir trouver les informations suivantes et les tester au fur et à mesure dans ton programme pour expérimenter et comprendre comment TypeScript pourra t'aider à écrire ton meilleur code !
+You will have to find the following information and test them as you go along in your program to experiment and understand how TypeScript will help you write your best code!
 
 ## Level 1
 
-- Quels sont les différents type primitives de données en TypeScript ? 
-- Comment typer un tableau ? 
-- Quel est le type `any` ?
-- Comment typer le retour d'une fonction ainsi que le type de ses paramètres ? 
+- Which are the different primitive data types in TypeScript?
+- How to type an Array?
+- What is the `any` type?
+- How to type the return of a function as well as the type of its parameters?
 
-**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+**🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
 ## Level 2
 
-- Qu'est ce qu'une classe ? 
-- Qu'est ce qu'un constructeur de classe ? 
-- Qu'est ce qu'une instance de classe ?
-- Comment vérifier qu'une classe est d'une certaine instance ?
-- Qu'est ce que `this` dans une classe ?
-- Qu'est ce qu'une méthode de classe ? 
-- Qu'est ce que la visibilité des propriétés ? 
+- What is a class?
+- What is a class constructor?
+- What is a class instance?
+- How to check that a class is of a certain instance?
+- What is `this` in a class?
+- What is a class method?
+- What is the visibility of properties?
+- What is the difference between `public`, `private` and `protected`?
 
-**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+**🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
 ## Level 3
 
-- Comment faire pour diviser notre programme en différents fichiers ? (ex: une classe dans un fichier que j'importe dans un autre) 
-- Qu'est ce que l'héritage ? 
-- Comment appeler le constructeur d'une classe mère ? 
-- Comment appeler une méthode d'une classe mère ? 
-- Qu'est ce que le polymorphism ? 
+- How to split our program into different files? (e.g. a class in a file that I import into another)
+- What is the `export` keyword?
+- What is the `import` keyword?
+- What's inheritance?
+- How to call the constructor of a parent class?
+- How to call a method of a parent class?
+- What is polymorphism?
 
-**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+**🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
-## Boss level 
+## Boss level
 
-Met en pratique le fruit de tes recherches à travers cet exercice en binôme !
-### Partie 1 : Héros
+You've learned a lot of things! Now it's time to put it into practice through this exercise in pairs!
 
-La classe `Hero` permet de créer des objets possédant les propriétés suivantes :
+### Part 1 : Heroes
 
-    name : string
-    power : number
-    life : number
+Create a `Hero` class that allows you to create objects with the following properties:
 
-​Et les méthodes
+```ts
+name: string;
+power: number;
+life: number;
+```
 
-    attack(opponent: Hero)
-    isAlive()
+And the methods
 
-​La méthode `attack` a un paramètre `opponent` (de type `Hero`). Il faut réduire le nombre (`life`) de `opponent` d'autant de dégats (`power`) de l'attaquant.
+```ts
+  attack(opponent: Hero)
+  isAlive()
+```
 
-​
-*Exemple : Si Joan attaque Leon, cela sera représenté par :*
+The `attack` method has an `opponent` parameter (of type `Hero`). It is necessary to reduce the number (`life`) of `opponent` by as much damage (`power`) of the attacker.
 
-    joan.attack(leon)
+​*Example: If the Joan instance, attacks the Leon instance, it will be represented by this method call:*
 
-​La méthode `isAlive` devrait retourner `true` si le nombre de points de vie du héros est supérieur à zéro et `false` sinon.
+```ts
+joan.attack(leon);
+```
 
-Crée deux instances de `Hero` et vérifie que les méthodes `attack` et `isAlive` fonctionnent.
+The `isAlive` method should return `true` if the hero's life points are greater than zero and `false` otherwise.
 
-**Contrainte à ajouter** : il faut maintenant faire en sorte que les propriétés `name`, `power`, `life` soient privées. Tu vas devoir créer des méthodes permettant d'accéder à leur valeur et de modifier leur valeur.
+Create two instances of `Hero` and check that the `attack` and `isAlive` methods work.
 
-### Partie 2 : Armes
-​
-Crée une classe `Weapon` avec la propriété suivante :
+**Constraint to add**: you now have to make sure that the `name`, `power`, `life` properties are private. You will have to create methods to access their value and modify their value.
 
-    name : string
-
-Ajoute l'attribut `weapon` (de type `Weapon`) à la classe `Hero` sans modifier le constructeur (ainsi `weapon` n'est pas initialisé).
-
-Crée trois classes `HeroAxe`, `HeroSword` et `HeroSpear` qui héritent de `Hero`.
-
-Ces trois classes appellent le constructeur de leur parent et initialisent `weapon` avec des instances de la classe `Weapon` dont les noms seront `axe`, `sword` ou `spear` selon le cas.
-
-Dans les classes `HeroAxe`, `HeroSword` et `HeroSpear`, redéfinisse la méthode `attack` pour prendre en compte les cas suivants :
-
-- `HeroAxe` : si le type de `opponent` est `HeroSword`, multiplier `power` par deux
-- `HeroSword` : si le type de `opponent` est `HeroSpear`, multiplier `power` par deux
-- `HeroSpear` : si le type de `opponent` est `HeroAxe`, multiplier `power` par deux
+### Part 2 : Weapons
 
 ​
-Astuce : utilise le mot-clé `super` pour appeler la méthode `attack` de la classe parente.
+Create a `Weapon` class with the following property:
 
-Crée des instances des trois classes `HeroAxe`, `HeroSword` et `HeroSpear` et vérifie que leurs méthodes `attack` fonctionnent correctement.
+```ts
+name: string;
+```
+
+Add the `weapon` attribute (of type `Weapon`) to the `Hero` class without modifying the constructor (so `weapon` is not initialized).
+
+Create three classes `HeroAxe`, `HeroSword` and `HeroSpear` that inherit from `Hero`.
+
+These three classes call the constructor of their parent and initialize `weapon` with instances of the `Weapon` class whose names will be `axe`, `sword` or `spear` as the case may be.
+
+In the `HeroAxe`, `HeroSword` and `HeroSpear` classes, redefine the `attack` method to take into account the following cases:
+
+- `HeroAxe` : if the type of `opponent` is `HeroSword`, multiply `power` by two
+- `HeroSword` : if the type of `opponent` is `HeroSpear`, multiply `power` by two
+- `HeroSpear` : if the type of `opponent` is `HeroAxe`, multiply `power` by two
+
+Tip: use the `super` keyword to call the `attack` method of the parent class.
 ​
-### Partie 3 : Bataille
+Create instances of the three classes `HeroAxe`, `HeroSword` and `HeroSpear` and check that their `attack` methods work correctly.
+​
 
-Crée une boucle qui fait que deux instances de sous-classes `Hero` s'affrontent (elles attaquent en même temps).
+### Part 3 : Battle
 
-Quand au moins l'une d'entre elles est morte, afficher `{heroName} wins`. Si les deux sont morts, afficher `It's a draw`.
+Create a loop that makes two instances of subclasses `Hero` fight each other (they attack at the same time).
 
-**🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
+When at least one of them is dead, display `{heroName} wins`. If both are dead, display `It's a draw`.
+
+**🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
 ---
 
-***Bonus 1 : Les dégâts de l'arme***
+**_Bonus 1 : Weapon damage_**
 
-*Ajoute une propriété `damage` à la classe `Weapon` et fait en sorte qu'elle soit initialisée par le constructeur.*
+_Add a `damage` property to the `Weapon` class and make sure it is initialized by the constructor._
 
-*Modifie la méthode `attack` de `Hero` afin que les dégâts soient calculés de la façon suivante : la puissance du héro `power` + les dégâts de l'arme `power`*
+_Edit the `attack` method of `Hero` so that the damage is calculated as follows: the hero's power `power` + the weapon's damage `power`_
 
-***Bonus 2 : Interface graphique***
+**_Bonus 2 : User interface_**
 
-*Réalise une interface graphique pour l'application (par exemple, avec un choix de héros et d'armes, et un visuel sur les dégâts infligés)*
-
+_Create a user interface for the application (for example, with a choice of heroes and weapons, and a visual on the damage inflicted)_
