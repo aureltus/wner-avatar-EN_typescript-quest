@@ -144,8 +144,30 @@ Properties of a class can have different visibility levels, which determine wher
 ## Level 3
 
 - How to split our program into different files? (e.g. a class in a file that I import into another)
-- What is the `export` keyword?
-- What is the `import` keyword?
+  //TODO
+
+### What is the `export` keyword?
+
+this is used to indicate that a variable, function, class, or other declaration should be made available for use in other files or modules.
+
+```
+export const myVariable: number = 42;
+export function add(x: number, y: number): number {
+    return x + y;
+}
+```
+
+### What is the `import` keyword?
+
+Using import allows you to group features into separate files, making code easier to manage and allowing for feature reuse.
+
+```
+import { myVariable } from './myModule';
+export function add(x: number, y: number): number {
+    return x + y;
+}
+```
+
 - What's inheritance?
 - How to call the constructor of a parent class?
 - How to call a method of a parent class?
