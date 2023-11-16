@@ -4,10 +4,68 @@ You will have to find the following information and test them as you go along in
 
 ## Level 1
 
-- Which are the different primitive data types in TypeScript?
-- How to type an Array?
-- What is the `any` type?
-- How to type the return of a function as well as the type of its parameters?
+### Which are the different primitive data types in TypeScript?
+
+-boolean : Represents a binary choice, either true or false.
+
+```
+let isTrue :boolean = false
+```
+
+-number : Represents numeric values, including integers and floating-point numbers.
+
+```
+let age: number = 27
+```
+
+-string : Represents textual data
+
+```
+let name: string = "Bob"
+```
+
+-bigint : when need to work with very large integers that exceed the limits of the number type.(not yet massively published)
+
+```
+let valeur: bigint = 9007199254740991n;
+```
+
+-symbol : symbols are unique and immutable values, often used as object keys.
+
+```
+let sym1: symbol = Symbol('key');
+let sym2: symbol = Symbol('key');
+
+console.log(sym1 === sym2);  // false, because symbols are unique
+```
+
+-undefined : represents a variable that has been declared but has not yet been assigned a value.
+-null : used to indicate the intentional absence of any object reference.
+
+### How to type an Array?
+
+```
+// Array of numbers
+let numbers: number[] = [1, 2, 3, 4, 5];
+
+// Array of strings
+let names: string[] = ["John", "Jane", "Doe"];
+
+// Array of booleans
+let flags: boolean[] = [true, false, true];
+```
+
+### What is the `any` type?
+
+The any type is useful when you don't want to write a very long typing line just to convince TypeScript that a certain line of code is valid.
+
+### How to type the return of a function as well as the type of its parameters?
+
+```
+function addNumbers(x: number, y: number): number {
+    return x + y;
+}
+```
 
 **🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
@@ -116,3 +174,7 @@ _Edit the `attack` method of `Hero` so that the damage is calculated as follows:
 **_Bonus 2 : User interface_**
 
 _Create a user interface for the application (for example, with a choice of heroes and weapons, and a visual on the damage inflicted)_
+
+```
+
+```
