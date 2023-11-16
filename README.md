@@ -71,14 +71,73 @@ function addNumbers(x: number, y: number): number {
 
 ## Level 2
 
-- What is a class?
-- What is a class constructor?
-- What is a class instance?
-- How to check that a class is of a certain instance?
-- What is `this` in a class?
-- What is a class method?
-- What is the visibility of properties?
-- What is the difference between `public`, `private` and `protected`?
+### What is a class?
+
+A class serves as a blueprint or template for creating objects.
+
+```
+class Point {
+  x: number;
+  y: number;
+}
+```
+
+### What is a class constructor?
+
+Class constructors are very similar to functions. you can add parameters with type annotations, default values, as well as overloads
+
+```
+class Point {
+x: number;
+y: number;
+
+// Normal signature with defaults
+constructor(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
+}
+}
+```
+
+```
+class Point {
+// Overloads
+constructor(x: number, y: string);
+constructor(s: string);
+constructor(xs: any, y?: any) {
+}
+}
+```
+
+### What is a class instance?
+
+```
+const pt = new Point();
+pt.x = 0;
+pt.y = 0;
+```
+
+### How to check that a class is of a certain instance?
+
+This is an individual object created from a class in object-oriented programming
+
+### What is `this` in a class?
+
+In the context of a method of a class, this refers to the instance of the current class.
+
+### What is a class method?
+
+Methods are functions defined within the scope of a class. These methods are designed to perform operations related to the class and can access and manipulate the class's properties.
+
+### What is the visibility of properties?
+
+Properties of a class can have different visibility levels, which determine where the properties can be accessed. TypeScript supports three visibility modifiers for class properties.
+
+### What is the difference between `public`, `private` and `protected`?
+
+- Public (public): The default visibility if no modifier is specified. Public properties can be accessed from outside the class.
+- Private (private): Properties marked as private can only be accessed within the class where they are declared. They are not accessible from outside the class or from derived classes.
+- Protected (protected): Properties marked as protected are accessible within the class and its subclasses (derived classes). They are not accessible from outside the class hierarchy.
 
 **🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
