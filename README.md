@@ -6,19 +6,19 @@ You will have to find the following information and test them as you go along in
 
 ### Which are the different primitive data types in TypeScript?
 
--boolean : Represents a binary choice, either true or false.
+- boolean : Represents a binary choice, either true or false.
 
 ```
 let isTrue :boolean = false
 ```
 
--number : Represents numeric values, including integers and floating-point numbers.
+- number : Represents numeric values, including integers and floating-point numbers.
 
 ```
 let age: number = 27
 ```
 
--string : Represents textual data
+- string : Represents textual data
 
 ```
 let name: string = "Bob"
@@ -30,7 +30,7 @@ let name: string = "Bob"
 let valeur: bigint = 9007199254740991n;
 ```
 
--symbol : symbols are unique and immutable values, often used as object keys.
+- symbol : symbols are unique and immutable values, often used as object keys.
 
 ```
 let sym1: symbol = Symbol('key');
@@ -39,8 +39,8 @@ let sym2: symbol = Symbol('key');
 console.log(sym1 === sym2);  // false, because symbols are unique
 ```
 
--undefined : represents a variable that has been declared but has not yet been assigned a value.
--null : used to indicate the intentional absence of any object reference.
+- undefined : represents a variable that has been declared but has not yet been assigned a value.
+- null : used to indicate the intentional absence of any object reference.
 
 ### How to type an Array?
 
