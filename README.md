@@ -6,45 +6,45 @@ You will have to find the following information and test them as you go along in
 
 ### Which are the different primitive data types in TypeScript?
 
-- boolean : Represents a binary choice, either true or false.
+- `boolean` : Represents a binary choice, either true or false.
 
-```
-let isTrue :boolean = false
-```
-
-- number : Represents numeric values, including integers and floating-point numbers.
-
-```
-let age: number = 27
+```ts
+let isTrue: boolean = false;
 ```
 
-- string : Represents textual data
+- `number` : Represents numeric values, including integers and floating-point numbers.
 
-```
-let name: string = "Bob"
+```ts
+let age: number = 27;
 ```
 
--bigint : when need to work with very large integers that exceed the limits of the number type.(not yet massively published)
+- `string` : Represents textual data
 
+```ts
+let name: string = "Bob";
 ```
+
+- `bigint` : when need to work with very large integers that exceed the limits of the number type.(not yet massively published)
+
+```ts
 let valeur: bigint = 9007199254740991n;
 ```
 
-- symbol : symbols are unique and immutable values, often used as object keys.
+- `symbol` : symbols are unique and immutable values, often used as object keys.
 
+```ts
+let sym1: symbol = Symbol("key");
+let sym2: symbol = Symbol("key");
+
+console.log(sym1 === sym2); // false, because symbols are unique
 ```
-let sym1: symbol = Symbol('key');
-let sym2: symbol = Symbol('key');
 
-console.log(sym1 === sym2);  // false, because symbols are unique
-```
-
-- undefined : represents a variable that has been declared but has not yet been assigned a value.
-- null : used to indicate the intentional absence of any object reference.
+- `undefined` : represents a variable that has been declared but has not yet been assigned a value.
+- `null` : used to indicate the intentional absence of any object reference.
 
 ### How to type an Array?
 
-```
+```ts
 // Array of numbers
 let numbers: number[] = [1, 2, 3, 4, 5];
 
@@ -57,13 +57,13 @@ let flags: boolean[] = [true, false, true];
 
 ### What is the `any` type?
 
-The any type is useful when you don't want to write a very long typing line just to convince TypeScript that a certain line of code is valid.
+The `any` type is useful when you don't want to write a very long typing line just to convince TypeScript that a certain line of code is valid. But never used that !
 
 ### How to type the return of a function as well as the type of its parameters?
 
-```
+```ts
 function addNumbers(x: number, y: number): number {
-    return x + y;
+  return x + y;
 }
 ```
 
@@ -75,7 +75,7 @@ function addNumbers(x: number, y: number): number {
 
 A class serves as a blueprint or template for creating objects.
 
-```
+```ts
 class Point {
   x: number;
   y: number;
@@ -86,32 +86,31 @@ class Point {
 
 Class constructors are very similar to functions. you can add parameters with type annotations, default values, as well as overloads
 
-```
+```ts
 class Point {
-x: number;
-y: number;
+  x: number;
+  y: number;
 
-// Normal signature with defaults
-constructor(x = 0, y = 0) {
-  this.x = x;
-  this.y = y;
-}
+  // Normal signature with defaults
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
 }
 ```
 
-```
+```ts
 class Point {
-// Overloads
-constructor(x: number, y: string);
-constructor(s: string);
-constructor(xs: any, y?: any) {
-}
+  // Overloads
+  constructor(x: number, y: string);
+  constructor(s: string);
+  constructor(xs: any, y?: any) {}
 }
 ```
 
 ### What is a class instance?
 
-```
+```ts
 const pt = new Point();
 pt.x = 0;
 pt.y = 0;
@@ -123,7 +122,7 @@ This is an individual object created from a class in object-oriented programming
 
 ### What is `this` in a class?
 
-In the context of a method of a class, this refers to the instance of the current class.
+In the context of a method of a class, `this` refers to the instance of the current class.
 
 ### What is a class method?
 
@@ -135,43 +134,132 @@ Properties of a class can have different visibility levels, which determine wher
 
 ### What is the difference between `public`, `private` and `protected`?
 
-- Public (public): The default visibility if no modifier is specified. Public properties can be accessed from outside the class.
-- Private (private): Properties marked as private can only be accessed within the class where they are declared. They are not accessible from outside the class or from derived classes.
-- Protected (protected): Properties marked as protected are accessible within the class and its subclasses (derived classes). They are not accessible from outside the class hierarchy.
+- `Public` (public): The default visibility if no modifier is specified. Public properties can be accessed from outside the class.
+- `Private` (private): Properties marked as private can only be accessed within the class where they are declared. They are not accessible from outside the class or from derived classes.
+- `Protected` (protected): Properties marked as protected are accessible within the class and its subclasses (derived classes). They are not accessible from outside the class hierarchy.
 
 **🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
 ## Level 3
 
-- How to split our program into different files? (e.g. a class in a file that I import into another)
-  //TODO
+### How to split our program into different files? (e.g. a class in a file that I import into another)
+
+using export/import
 
 ### What is the `export` keyword?
 
 this is used to indicate that a variable, function, class, or other declaration should be made available for use in other files or modules.
 
-```
+```ts
 export const myVariable: number = 42;
 export function add(x: number, y: number): number {
-    return x + y;
+  return x + y;
 }
 ```
 
 ### What is the `import` keyword?
 
-Using import allows you to group features into separate files, making code easier to manage and allowing for feature reuse.
+Using `import` allows you to group features into separate files, making code easier to manage and allowing for feature reuse.
 
-```
-import { myVariable } from './myModule';
+```ts
+import { myVariable } from "./myModule";
 export function add(x: number, y: number): number {
-    return x + y;
+  return x + y;
 }
 ```
 
-- What's inheritance?
-- How to call the constructor of a parent class?
-- How to call a method of a parent class?
-- What is polymorphism?
+### What's inheritance?
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a new class (called the subclass or derived class) to inherit attributes and behaviors from an existing class (called the superclass or base class). Inheritance facilitates code reuse and establishes a relationship between classes, allowing the derived class to leverage the properties and methods of the base class.
+
+```ts
+// Base class
+class Animal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  eat(): void {
+    console.log(`${this.name} is eating.`);
+  }
+}
+
+// Derived class inheriting from Animal
+class Dog extends Animal {
+  bark(): void {
+    console.log(`${this.name} is barking.`);
+  }
+}
+```
+
+### How to call the constructor of a parent class?
+
+```ts
+// Creating instances
+let dog = new Dog("Buddy");
+dog.eat(); // Inherited from Animal class
+dog.bark(); // Specific to Dog class
+```
+
+### How to call a method of a parent class?
+
+We can call a method of a parent class from a subclass using the `super` keyword. The `super` keyword is used to refer to the parent class, and you can use it to call methods defined in the parent class.
+
+```ts
+class Dog extends Animal {
+  breed: string;
+
+  constructor(name: string, breed: string) {
+    // Call the constructor of the parent class using super
+    super(name);
+
+    // Initialize the properties specific to the Dog class
+    this.breed = breed;
+  }
+}
+```
+
+### What is polymorphism?
+
+Polymorphism allows objects of different types to be treated as objects of a common type. It enables a single interface or method to be used with objects of various classes, providing a level of abstraction and flexibility in code design.
+
+There are two main types of polymorphism: compile-time polymorphism (also known as method overloading) and runtime polymorphism (also known as method overriding). In TypeScript, the most common form of polymorphism is runtime polymorphism through method overriding.
+
+```ts
+// Compile-time Polymorphism
+class MathOperations {
+  add(x: number, y: number): number {
+    return x + y;
+  }
+
+  add(x: string, y: string): string {
+    return x + y;
+  }
+}
+
+/************************************/
+
+//Runtime Polymorphism
+class Animal {
+  makeSound(): void {
+    console.log("Generic animal sound");
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("Bark! Bark!");
+  }
+}
+
+class Cat extends Animal {
+  makeSound(): void {
+    console.log("Meow!");
+  }
+}
+```
 
 **🎉🎉🎉Update the Github Project board🎉🎉🎉**
 
