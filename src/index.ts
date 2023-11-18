@@ -5,7 +5,7 @@ class Hero {
   private name: string;
   private power: number;
   private life: number;
-  weapon: Weapons = new Weapons("ts");
+  private weapon: Weapons = new Weapons("none", 0);
 
   constructor(name: string, power: number, life: number) {
     this.name = name;
@@ -13,8 +13,10 @@ class Hero {
     this.life = life;
   }
 
-  attack(opponent: Hero): void {
-    opponent.setLife(this.power);
+  attack(opponent: Hero, multiplicator = 1): void {
+    const totalDamage: number =
+      this.power * multiplicator + this.weapon.getDamage();
+    opponent.setLife(totalDamage);
   }
 
   isAlive(): boolean {
@@ -26,28 +28,36 @@ class Hero {
   getName() {
     return this.name;
   }
-  setLife(powerOpponent: number): void {
-    this.life -= powerOpponent;
+  setLife(damage: number): void {
+    this.life -= damage;
+  }
+  attributeWeapon(weapon: Weapons): void {
+    this.weapon = weapon;
   }
 }
 
 class Weapons {
-  name: string;
+  private name: string;
+  private damage: number;
 
-  constructor(name: string) {
+  constructor(name: string, damage: number) {
     this.name = name;
+    this.damage = damage;
+  }
+  getDamage(): number {
+    return this.damage;
   }
 }
 
 class HeroAxe extends Hero {
   constructor(name: string, power: number, life: number) {
     super(name, power, life);
-    this.weapon = new Weapons("axe");
+    super.attributeWeapon(new Weapons("axe", 5));
   }
 
   attack(opponent: Hero): void {
     if (opponent instanceof HeroSword) {
-      opponent.setLife(super.getPower() * 2);
+      super.attack(opponent, 2);
     } else {
       super.attack(opponent);
     }
@@ -57,12 +67,12 @@ class HeroAxe extends Hero {
 class HeroSword extends Hero {
   constructor(name: string, power: number, life: number) {
     super(name, power, life);
-    this.weapon = new Weapons("Sword");
+    super.attributeWeapon(new Weapons("Sword", 5));
   }
 
   attack(opponent: Hero): void {
     if (opponent instanceof HeroSpear) {
-      opponent.setLife(super.getPower() * 2);
+      super.attack(opponent, 2);
     } else {
       super.attack(opponent);
     }
@@ -72,12 +82,12 @@ class HeroSword extends Hero {
 class HeroSpear extends Hero {
   constructor(name: string, power: number, life: number) {
     super(name, power, life);
-    this.weapon = new Weapons("Spear");
+    super.attributeWeapon(new Weapons("Spear", 5));
   }
 
   attack(opponent: Hero): void {
     if (opponent instanceof HeroAxe) {
-      opponent.setLife(super.getPower() * 2);
+      super.attack(opponent, 2);
     } else {
       super.attack(opponent);
     }
@@ -85,7 +95,7 @@ class HeroSpear extends Hero {
 }
 
 const player: HeroAxe = new HeroAxe("bob", 15, 300);
-const player2: HeroSword = new HeroSword("patrick", 30, 300);
+const player2: HeroSword = new HeroSword("patrick", 15, 300);
 
 while (player2.isAlive() && player.isAlive()) {
   player.attack(player2);
