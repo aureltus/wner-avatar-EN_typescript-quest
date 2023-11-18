@@ -118,11 +118,63 @@ pt.y = 0;
 
 ### How to check that a class is of a certain instance?
 
-This is an individual object created from a class in object-oriented programming
+'instanceof' is used to check if animalInstance is an instance of Animal (which is true) and if it's an instance of Dog (which is false).
+
+```ts
+class Animal {
+  // ...
+}
+
+class Dog extends Animal {
+  // ...
+}
+
+let animalInstance = new Animal();
+let dogInstance = new Dog();
+
+console.log(animalInstance instanceof Animal); // true
+console.log(animalInstance instanceof Dog); // false
+
+console.log(dogInstance instanceof Animal); // true
+console.log(dogInstance instanceof Dog); // true
+```
 
 ### What is `this` in a class?
 
-In the context of a method of a class, `this` refers to the instance of the current class.
+In the context of a class in TypeScript (or in JavaScript), this refers to the instance of the class that is currently being used or manipulated. It represents the object on which the method or property is being invoked.
+
+```ts
+class MyClass {
+  private myProperty: string;
+
+  constructor(initialValue: string) {
+    this.myProperty = initialValue;
+  }
+
+  // A method that uses 'this'
+  printPropertyValue(): void {
+    console.log(this.myProperty);
+  }
+
+  // A method that modifies 'this'
+  updatePropertyValue(newValue: string): void {
+    this.myProperty = newValue;
+  }
+}
+
+// Creating an instance of MyClass
+let myInstance = new MyClass("Hello, World!");
+
+// Using methods that involve 'this'
+myInstance.printPropertyValue(); // Outputs: Hello, World!
+myInstance.updatePropertyValue("New Value");
+myInstance.printPropertyValue(); // Outputs: New Value
+```
+
+The printPropertyValue method uses this to refer to the myProperty property of the current instance.
+The updatePropertyValue method also uses this to modify the myProperty property of the current instance.
+When calling these methods on myInstance, this refers to myInstance.
+It's important to note that the value of this can be influenced by how a function or method is called. If a method is called as a standalone function or as a callback, this may not reference the expected object. In such cases, you might need to use techniques like arrow functions, binding, or other approaches to ensure that this behaves as expected.
 
 ### What is a class method?
 
