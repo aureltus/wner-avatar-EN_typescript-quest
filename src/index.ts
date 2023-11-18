@@ -29,9 +29,6 @@ class Hero {
   setLife(powerOpponent: number): void {
     this.life -= powerOpponent;
   }
-  setPower(bonus: number): void {
-    this.power *= bonus;
-  }
 }
 
 class Weapons {
