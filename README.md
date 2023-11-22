@@ -249,10 +249,25 @@ class Dog extends Animal {
 ### How to call the constructor of a parent class?
 
 ```ts
-// Creating instances
-let dog = new Dog("Buddy");
-dog.eat(); // Inherited from Animal class
-dog.bark(); // Specific to Dog class
+class Hero {
+  private name: string;
+  private power: number;
+  private life: number;
+  private weapon!: Weapons;
+
+  constructor(name: string, power: number, life: number) {
+    this.name = name;
+    this.power = power;
+    this.life = life;
+  }
+}
+/***************************************************/
+class HeroSword extends Hero {
+  constructor(name: string, power: number, life: number) {
+    super(name, power, life);
+    super.attributeWeapon(new Weapons("Sword", 5));
+  }
+}
 ```
 
 ### How to call a method of a parent class?
@@ -260,15 +275,26 @@ dog.bark(); // Specific to Dog class
 We can call a method of a parent class from a subclass using the `super` keyword. The `super` keyword is used to refer to the parent class, and you can use it to call methods defined in the parent class.
 
 ```ts
-class Dog extends Animal {
-  breed: string;
+class Hero {
+  attack(opponent: Hero, multiplicator = 1): void {
+    const totalDamage: number =
+      this.power * multiplicator + this.weapon.getDamage();
+    opponent.setLife(totalDamage);
+  }
+}
 
-  constructor(name: string, breed: string) {
-    // Call the constructor of the parent class using super
-    super(name);
+class HeroAxe extends Hero {
+  constructor(name: string, power: number, life: number) {
+    super(name, power, life);
+    super.attributeWeapon(new Weapons("axe", 5));
+  }
 
-    // Initialize the properties specific to the Dog class
-    this.breed = breed;
+  attack(opponent: Hero): void {
+    if (opponent instanceof HeroSword) {
+      super.attack(opponent, 2);
+    } else {
+      super.attack(opponent);
+    }
   }
 }
 ```

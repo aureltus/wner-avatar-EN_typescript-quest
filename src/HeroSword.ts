@@ -1,0 +1,18 @@
+import { Hero, HeroSpear, Weapons } from "./Hero";
+
+class HeroSword extends Hero {
+  constructor(name: string, power: number, life: number) {
+    super(name, power, life);
+    super.attributeWeapon(new Weapons("Sword", 5));
+  }
+
+  attack(opponent: Hero): void {
+    if (opponent instanceof HeroSpear) {
+      super.attack(opponent, 2);
+    } else {
+      super.attack(opponent);
+    }
+  }
+}
+
+export { HeroSword };
