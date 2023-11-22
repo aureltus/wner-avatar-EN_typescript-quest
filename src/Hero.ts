@@ -1,7 +1,4 @@
 import { Weapons } from "./Weapons";
-import { HeroSword } from "./HeroSword";
-import { HeroAxe } from "./heroAxe";
-import { HeroSpear } from "./HeroSpear";
 
 class Hero {
   private name: string;
@@ -38,4 +35,4 @@ class Hero {
   }
 }
 
-export { Hero, Weapons, HeroAxe, HeroSword, HeroSpear };
+export { Hero, Weapons };

@@ -1,4 +1,5 @@
-import { Hero, Weapons, HeroSword } from "./Hero";
+import { Hero, Weapons } from "./Hero";
+import { HeroSword } from "./HeroSword";
 
 class HeroAxe extends Hero {
   constructor(name: string, power: number, life: number) {

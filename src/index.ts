@@ -1,6 +1,7 @@
 let message: string = "Hello World !";
 console.log(message);
-import { HeroAxe, HeroSword, HeroSpear } from "./Hero";
+import { HeroSword } from "./HeroSword";
+import { HeroAxe } from "./HeroAxe";
 
 const player: HeroAxe = new HeroAxe("bob", 15, 300);
 const player2: HeroSword = new HeroSword("patrick", 15, 300);
