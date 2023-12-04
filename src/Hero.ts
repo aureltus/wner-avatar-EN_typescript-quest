@@ -14,20 +14,20 @@ class Hero {
 
   attack(opponent: Hero, multiplicator = 1): void {
     const totalDamage: number =
-      this.power * multiplicator + this.weapon.getDamage();
-    opponent.setLife(totalDamage);
+      this.power * multiplicator + this.weapon.damageValue;
+    opponent.lifeValue = totalDamage;
   }
 
   isAlive(): boolean {
     return this.life > 0;
   }
-  getPower() {
+  get powerValue() {
     return this.power;
   }
-  getName() {
+  get nameValue() {
     return this.name;
   }
-  setLife(damage: number): void {
+  set lifeValue(damage: number) {
     this.life -= damage;
   }
   attributeWeapon(weapon: Weapons): void {

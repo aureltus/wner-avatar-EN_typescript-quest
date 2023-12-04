@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#game-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player {
+  text-align: center;
+  border: solid 1px black;
+  width: 250px;
+  height: 300px;
+}
+
+.health-bar {
+  width: 100px;
+  height: 20px;
+  background-color: green;
+  margin: 10px auto;
+}
+
+.health-bar::after {
+  background-color: red;
+}
+
+button {
+  margin-top: 10px;
+}

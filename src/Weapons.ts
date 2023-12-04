@@ -6,7 +6,7 @@ class Weapons {
     this.name = name;
     this.damage = damage;
   }
-  getDamage(): number {
+  get damageValue(): number {
     return this.damage;
   }
 }
